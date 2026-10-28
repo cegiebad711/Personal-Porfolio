@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,29 +18,22 @@
   <meta property="og:description" content="Helping tradespeople and contractors scale with process-driven digital marketing and AI automation systems.">
   <meta property="og:image" content="cegie.jpg">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Bricolage Grotesque, DM Sans, Instrument Serif, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Background Grids & Ambient Effects -->
-  <div class="grid-overlay" aria-hidden="true"></div>
-  <div class="radial-glow" id="radialGlow" aria-hidden="true"></div>
-
-  <!-- Sticky Navigation Header -->
+  <!-- Minimal Sticky Navigation Header -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-brand" aria-label="Cegie Badayos Homepage">
-        <span class="brand-badge">CB</span>
-        <div class="brand-title">
-          <span class="brand-name">Cegie Badayos</span>
-          <span class="brand-role">AI & Digital Marketing</span>
-        </div>
+      <a href="#hero" class="nav-logo" aria-label="Cegie Badayos Homepage">
+        <span class="nav-monogram">CB</span>
+        <span>Cegie Badayos</span>
       </a>
 
       <!-- Navigation Links -->
@@ -53,14 +46,9 @@
         <a href="#contact" class="nav-link">Contact</a>
       </div>
 
-      <!-- Header Action Controls -->
+      <!-- Header Action Controls (Dark only - no theme toggle) -->
       <div class="nav-actions">
-        <!-- Light / Dark Theme Switcher -->
-        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle light or dark theme" title="Toggle theme">
-          <span id="themeIcon">☀️</span>
-        </button>
-
-        <a href="#contact" class="nav-cta-btn">Work With Me</a>
+        <a href="#contact" class="btn-nav">Work With Me</a>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="hamburger" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -74,658 +62,753 @@
     <div class="scroll-progress" id="scrollProgress"></div>
   </nav>
 
-  <!-- Page Main Content Wrap -->
-  <div class="wrap">
-
-    <!-- ====================================================================
-         1. HERO SECTION
-         ==================================================================== -->
-    <header class="hero-section" id="hero">
+  <!-- ====================================================================
+       1. HERO SECTION
+       ==================================================================== -->
+  <header class="hero-section" id="hero">
+    <div class="container">
       <div class="hero-grid">
         
         <!-- Hero Left Column: Positioning & CTAs -->
-        <div class="hero-text-col reveal">
-          <div class="hero-eyebrow">
-            <span>⚡ Available for Select Projects</span>
+        <div class="hero-left fade-up">
+          <!-- Availability Pill with Pulsing Amber Dot -->
+          <div class="hero-status-pill">
+            <span class="status-dot-pulse" aria-hidden="true"></span>
+            <span>Available for Select Projects</span>
             <span>·</span>
             <span>Philippines (GMT+8)</span>
           </div>
 
-          <h1 class="hero-title">
-            Hi, I'm Cegie Badayos 
-            <span class="pronounce-tag">[ Pronounced "C-G" ]</span>
-          </h1>
+          <div class="hero-name-row">
+            <h1 class="hero-h1">
+              Hi, I'm Cegie Badayos
+            </h1>
+            <!-- Small mono caption under name -->
+            <span class="hero-pronounce">[ Pronounced "C-G" ]</span>
+          </div>
 
-          <p class="hero-pitch">
+          <p class="hero-pitch-text">
             I am a <strong>digital marketer and AI automation freelancer</strong> who helps business owners scale by saving them time, eliminating wasted expenses, and capturing more high-paying jobs.
           </p>
 
-          <div class="hero-niche">
-            <span>🎯</span>
-            <div>
-              <strong>Specialized for Tradespeople &amp; Contractors:</strong>
-              Whether you run a landscaping startup, plumbing, electrical, or home improvement business, I build systems that make sure no lead falls through the cracks while you're busy on the job.
-            </div>
+          <div class="hero-target-box">
+            <strong>Specialized for Tradespeople &amp; Contractors:</strong>
+            Whether you run a landscaping startup, plumbing, electrical, or home improvement business, I build systems that make sure no lead falls through the cracks while you're busy on the job.
           </div>
 
           <!-- Hero Action Buttons -->
           <div class="hero-cta-group">
-            <a href="#contact" class="btn-primary">Work With Me &#8594;</a>
-            <a href="#services" class="btn-secondary">See What I Build &#8595;</a>
+            <a href="#contact" class="btn btn-primary">
+              <span>Work With Me</span>
+              <svg class="btn-arrow-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </a>
+            <a href="#services" class="btn btn-secondary">
+              <span>See What I Build</span>
+            </a>
           </div>
 
-          <!-- Quick Proof Points -->
-          <div class="hero-badges-row">
-            <span class="hero-badge-item">✓ 10+ Years in Client-Facing Operations</span>
-            <span class="hero-badge-item">✓ Systems-First Thinker</span>
-            <span class="hero-badge-item">✓ Honest, No-Fluff Approach</span>
+          <!-- Trust points row with thin SVG checks -->
+          <div class="hero-trust-row">
+            <span class="trust-item">
+              <svg viewBox="0 0 16 16" fill="none">
+                <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/>
+              </svg>
+              <span>10+ Years in Client-Facing Operations</span>
+            </span>
+            <span class="trust-item">
+              <svg viewBox="0 0 16 16" fill="none">
+                <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/>
+              </svg>
+              <span>Systems-First Thinker</span>
+            </span>
+            <span class="trust-item">
+              <svg viewBox="0 0 16 16" fill="none">
+                <polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/>
+              </svg>
+              <span>Honest, No-Fluff Approach</span>
+            </span>
           </div>
         </div>
 
-        <!-- Hero Right Column: Cegie Portrait Card -->
-        <div class="hero-photo-wrapper reveal delay-1">
-          <div class="hero-photo-frame">
-            <img src="cegie.jpg" alt="Cegie Badayos — Digital Marketer & AI Automation Freelancer" loading="eager">
-            <div class="photo-badge-card">
-              <div class="photo-badge-status">
-                <span class="live-pulse-dot"></span>
+        <!-- Hero Right Column: 4:5 Portrait Frame with Offset Amber Outline -->
+        <div class="hero-portrait-col fade-up">
+          <div class="portrait-frame-wrap">
+            <!-- Offset amber hairline outline -->
+            <div class="portrait-offset-border" aria-hidden="true"></div>
+            
+            <div class="portrait-inner-card">
+              <!-- Floating info tag top right -->
+              <div class="portrait-floating-tag portrait-tag-top">
+                <span class="dot" aria-hidden="true"></span>
                 <span>Open for Client Work</span>
               </div>
-              <div class="photo-badge-loc">📍 Cebu, Philippines</div>
+
+              <img src="cegie.jpg" alt="Cegie Badayos — Digital Marketer & AI Automation Freelancer" width="900" height="1125" class="portrait-img" loading="eager">
+
+              <!-- Floating info tag bottom left -->
+              <div class="portrait-floating-tag portrait-tag-bottom">
+                <span>Cebu, Philippines</span>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <!-- ====================================================================
-           2. ABOUT SECTION
-           ==================================================================== -->
-      <section id="about" class="reveal">
-        <div class="section-label">
-          <span class="dot"></span>
-          <span>My Background &amp; Story</span>
-        </div>
-        
-        <h2 class="section-heading">
-          A decade on the front lines taught me to <span class="accent-amber">think in systems</span>.
-        </h2>
+  <main>
+    <!-- ====================================================================
+         2. ABOUT SECTION (SPLIT STICKY LAYOUT)
+         ==================================================================== -->
+    <section id="about">
+      <div class="container">
+        <div class="about-split-grid">
+          
+          <!-- Left Sticky Column -->
+          <div class="about-sticky-col fade-up">
+            <div class="section-eyebrow">
+              <span class="mono-tag">Background &amp; Story</span>
+            </div>
+            <h2 class="section-h2">
+              A decade on the front lines taught me to <span class="serif-accent">think in systems</span>.
+            </h2>
+            <p class="section-subtext">
+              Before building digital automations, I spent over 10 years handling thousands of real human conversations, complex escalations, and high-stakes operations.
+            </p>
+          </div>
 
-        <p class="section-lede">
-          Before building digital automations, I spent over 10 years handling thousands of real human conversations, complex customer escalations, and high-stakes operations.
-        </p>
-
-        <div class="about-grid">
-          <!-- Left: First-Person Story Narrative -->
-          <div class="story-block">
-            <p class="story-lead">
+          <!-- Right Narrative Column -->
+          <div class="about-content-col fade-up">
+            <p class="story-lead-p">
               I didn't start in a vacuum of theory. My understanding of business comes from over ten years directly in the trenches of customer service, sales leadership, and financial fraud investigations.
             </p>
 
-            <p>
-              In 2015, I began as a <strong>Sales Representative</strong>, conducting both inbound and outbound sales of online talent portfolios. That role showed me the exact friction points prospects feel before making an investment, and how quickly opportunities slip away without structured follow-ups.
-            </p>
+            <!-- Refined Vertical Milestones Timeline -->
+            <div class="story-milestones-track">
+              
+              <div class="story-milestone-item">
+                <div class="milestone-year">2015 — 2017</div>
+                <div class="milestone-role">Sales Representative · Online Talent Portfolios</div>
+                <p class="milestone-desc">
+                  Conducted inbound and outbound sales. That role showed me the exact friction points prospects feel before making an investment, and how quickly opportunities slip away without structured follow-ups.
+                </p>
+              </div>
 
-            <p>
-              In 2017, I joined <strong>Accenture</strong> on a major UK telecommunications account. Over nearly seven years, I advanced from front-line customer service (handling orders, upgrades, and billing) to Subject Matter Expert (SME) and Team Leader. Leading teams through rigorous daily, monthly, and annual KPIs taught me that repeatable systems and clear communication always beat chaotic improvisation.
-            </p>
+              <div class="story-milestone-item">
+                <div class="milestone-year">June 2017 — Jan 2024</div>
+                <div class="milestone-role">Accenture · Agent &#8594; SME &#8594; Team Leader</div>
+                <p class="milestone-desc">
+                  Started on a major UK telecom account handling billing, orders, and customer acquisition. Promoted to SME and Team Leader, driving team KPIs and daily, monthly, and annual sales goals. Proved that repeatable systems always beat chaotic improvisation.
+                </p>
+              </div>
 
-            <p>
-              Since February 2024, I have served as a <strong>Fraud Specialist and SME at JP Morgan Chase</strong>, investigating fraud and dispute workflows across Cards, ACH, Wire, Zelle, and digital wallets. In an environment where every dollar matters, you learn absolute precision, procedural rigor, and how to remain rock-steady under pressure.
-            </p>
+              <div class="story-milestone-item">
+                <div class="milestone-year">Feb 2024 — Present</div>
+                <div class="milestone-role">JP Morgan Chase · Fraud Specialist &amp; SME</div>
+                <p class="milestone-desc">
+                  Investigating fraud and dispute workflows across Cards, ACH, Wire, Zelle, and digital wallets. Taught me absolute procedural rigor, how to remain rock-steady under pressure, and how to protect business value.
+                </p>
+              </div>
 
-            <!-- Honest Practitioner Positioning Callout -->
-            <div class="honesty-callout">
-              <div class="honesty-callout-header">
-                <span>🛡️</span>
+            </div>
+
+            <!-- Honest Practitioner Callout (Refined Hairline Banner) -->
+            <div class="honest-banner">
+              <div class="honest-banner-header">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
                 <span>Where I Stand Today — Transparent &amp; Fast-Growing</span>
               </div>
               <p>
                 My long-term mission is to build my own full-service AI automation and digital marketing agency. Right now, I am actively sharpening my execution in <strong>GoHighLevel, n8n, and modern AI automation tools</strong>. I present myself honestly as a dedicated, fast-growing practitioner rather than a retired guru. You get someone genuinely invested in your project who double-checks every automation and treats your business reputation like his own.
               </p>
             </div>
-          </div>
 
-          <!-- Right: Core Strengths & Values -->
-          <div class="strengths-column">
-            <div class="side-card">
-              <h3 class="side-card-title">Top Strengths</h3>
-              <ul class="strength-list">
-                <li class="strength-item">
-                  <div class="strength-icon">⚡</div>
-                  <div class="strength-text">
+            <!-- Top Strengths: Unboxed list with consistent 1.5px SVG icons -->
+            <div class="strengths-unboxed-block">
+              <div class="strengths-block-title">Top Strengths</div>
+              <div class="strengths-rows">
+                
+                <div class="strength-row">
+                  <div class="strength-svg-wrap">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                  </div>
+                  <div class="strength-text-wrap">
                     <strong>Self-Sufficient</strong>
                     <span>Takes ownership from start to finish without needing hand-holding.</span>
                   </div>
-                </li>
-                <li class="strength-item">
-                  <div class="strength-icon">🧠</div>
-                  <div class="strength-text">
+                </div>
+
+                <div class="strength-row">
+                  <div class="strength-svg-wrap">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/>
+                      <path d="M9 21h6"/>
+                    </svg>
+                  </div>
+                  <div class="strength-text-wrap">
                     <strong>Quick Learner</strong>
                     <span>Rapidly absorbs new software, APIs, workflows, and trade nuances.</span>
                   </div>
-                </li>
-                <li class="strength-item">
-                  <div class="strength-icon">⚙️</div>
-                  <div class="strength-text">
+                </div>
+
+                <div class="strength-row">
+                  <div class="strength-svg-wrap">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="3"/>
+                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                  </div>
+                  <div class="strength-text-wrap">
                     <strong>Process-Minded</strong>
                     <span>Spots bottlenecks and builds clean, repeatable sequences.</span>
                   </div>
-                </li>
-                <li class="strength-item">
-                  <div class="strength-icon">🌱</div>
-                  <div class="strength-text">
+                </div>
+
+                <div class="strength-row">
+                  <div class="strength-svg-wrap">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                    </svg>
+                  </div>
+                  <div class="strength-text-wrap">
                     <strong>Resilient (Mistakes = Upgrades)</strong>
                     <span>I don't shy away from challenges; every friction point is an opportunity to optimize.</span>
                   </div>
-                </li>
-                <li class="strength-item">
-                  <div class="strength-icon">🎯</div>
-                  <div class="strength-text">
+                </div>
+
+                <div class="strength-row">
+                  <div class="strength-svg-wrap">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10"/>
+                      <circle cx="12" cy="12" r="6"/>
+                      <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                  </div>
+                  <div class="strength-text-wrap">
                     <strong>Thrives Under Pressure</strong>
                     <span>Ten years of banking fraud and telecom leadership forged a calm, methodical mindset.</span>
                   </div>
-                </li>
-              </ul>
-            </div>
+                </div>
 
-            <div class="side-card">
-              <h3 class="side-card-title">What Makes Me Different</h3>
-              <div class="diff-quote">
-                "No hype, no empty promises, and uncompromising integrity. When you hire me, client success is my success."
               </div>
-              <p style="font-size: 0.88rem; margin-top: 0.75rem;">
+            </div>
+
+            <!-- What Makes Me Different: Large Editorial Pull-Quote -->
+            <div class="editorial-pullquote">
+              <blockquote>
+                "No hype, no empty promises, and uncompromising integrity. When you hire me, client success is my success."
+              </blockquote>
+              <cite>
                 Many agencies sell cookie-cutter packages and disappear. I take deep personal pride in my craftsmanship and make sure every system genuinely moves your bottom line.
-              </p>
+              </cite>
             </div>
+
           </div>
-        </div>
-      </section>
 
-      <!-- ====================================================================
-           3. SERVICES SECTION (WHAT I BUILD)
-           ==================================================================== -->
-      <section id="services" class="reveal">
-        <div class="section-label">
-          <span class="dot"></span>
-          <span>Core Offerings</span>
         </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. SERVICES SECTION (BENTO GRID WITH 2 LARGE + 2 SMALLER CARDS)
+         ==================================================================== -->
+    <section id="services">
+      <div class="container">
         
-        <h2 class="section-heading">
-          Practical systems designed for <span class="accent-forest">busy trade owners</span>.
-        </h2>
+        <div class="services-header-row fade-up">
+          <div class="section-eyebrow">
+            <span class="mono-tag">Core Offerings</span>
+          </div>
+          <h2 class="section-h2">
+            Practical systems designed for <span class="serif-accent">busy trade owners</span>.
+          </h2>
+          <p class="section-subtitle">
+            I don't build complicated tech for the sake of it. Every workflow I set up solves a real, painful problem that costs your business time or money.
+          </p>
+        </div>
 
-        <p class="section-lede">
-          I don't build complicated tech for the sake of it. Every workflow I set up solves a real, painful problem that costs your business time or money.
-        </p>
-
-        <div class="services-grid">
+        <div class="bento-services-grid">
           
-          <!-- Service Card 1: Missed-Call Text-Back -->
-          <div class="service-card reveal">
-            <div class="service-card-top">
-              <span class="service-num">Service 01</span>
-              <div class="service-icon-box">📞</div>
+          <!-- Bento Card 1: Featured Large (Missed-Call Text-Back) -->
+          <div class="bento-card bento-card-large-1 fade-up">
+            <div class="bento-card-top">
+              <span class="bento-number">Service 01</span>
+              <div class="bento-icon-svg">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
             </div>
-            <h3 class="service-title">Missed-Call Text-Back</h3>
-            <p class="service-desc">
+            <h3 class="bento-card-title">Missed-Call Text-Back</h3>
+            <p class="bento-card-desc">
               When a prospect calls your phone and you're up on a roof or operating equipment, an instant automated SMS fires within 10 seconds: <em>"Hey! Sorry I missed your call, I'm currently on a job. How can I help you today?"</em>
             </p>
-            <div class="service-problem-box">
-              <span class="problem-label">The Problem It Solves:</span>
-              <span class="problem-text">62% of calls to small service businesses go unanswered. Homeowners won't leave voicemails; they just call your competitor. This system stops lead bleed on day one.</span>
+            <div class="bento-problem-block">
+              <span class="bento-problem-label">The Problem It Solves</span>
+              <p class="bento-problem-text">
+                62% of calls to small service businesses go unanswered. Homeowners won't leave voicemails; they just call your competitor. This system stops lead bleed on day one.
+              </p>
             </div>
-            <div class="service-tools">
-              <span class="tool-tag">GoHighLevel (GHL)</span>
-              <span class="tool-tag">Twilio SMS</span>
-              <span class="tool-tag">Instant Alerts</span>
+            <div class="bento-tools-row">
+              <span class="tool-outline-pill">GoHighLevel (GHL)</span>
+              <span class="tool-outline-pill">Twilio SMS</span>
+              <span class="tool-outline-pill">Instant Alerts</span>
             </div>
           </div>
 
-          <!-- Service Card 2: Database Reactivation & Reviews -->
-          <div class="service-card reveal delay-1">
-            <div class="service-card-top">
-              <span class="service-num">Service 02</span>
-              <div class="service-icon-box">🔄</div>
+          <!-- Bento Card 2: Featured Smaller (Database Reactivation & Reviews) -->
+          <div class="bento-card bento-card-large-2 fade-up">
+            <div class="bento-card-top">
+              <span class="bento-number">Service 02</span>
+              <div class="bento-icon-svg">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                </svg>
+              </div>
             </div>
-            <h3 class="service-title">Database Reactivation &amp; Reviews</h3>
-            <p class="service-desc">
+            <h3 class="bento-card-title">Database Reactivation &amp; Reviews</h3>
+            <p class="bento-card-desc">
               We take your past customer lists and run respectful, personalized SMS/email check-ins to unlock repeat jobs, followed by an automated review sequence directing satisfied clients to your Google Profile.
             </p>
-            <div class="service-problem-box">
-              <span class="problem-label">The Problem It Solves:</span>
-              <span class="problem-text">Contractors leave thousands of dollars sitting in old contact lists, while struggling to get consistent 5-star Google reviews that win local search trust.</span>
+            <div class="bento-problem-block">
+              <span class="bento-problem-label">The Problem It Solves</span>
+              <p class="bento-problem-text">
+                Contractors leave thousands of dollars sitting in old contact lists, while struggling to get consistent 5-star Google reviews that win local search trust.
+              </p>
             </div>
-            <div class="service-tools">
-              <span class="tool-tag">GoHighLevel</span>
-              <span class="tool-tag">Google Business Profile</span>
-              <span class="tool-tag">Email/SMS</span>
+            <div class="bento-tools-row">
+              <span class="tool-outline-pill">GoHighLevel</span>
+              <span class="tool-outline-pill">Google Business Profile</span>
+              <span class="tool-outline-pill">Email/SMS</span>
             </div>
           </div>
 
-          <!-- Service Card 3: AI Chat Widget / Receptionist -->
-          <div class="service-card reveal">
-            <div class="service-card-top">
-              <span class="service-num">Service 03</span>
-              <div class="service-icon-box">🤖</div>
+          <!-- Bento Card 3: Smaller Card (AI Chat Widget / Digital Receptionist) -->
+          <div class="bento-card bento-card-small-1 fade-up">
+            <div class="bento-card-top">
+              <span class="bento-number">Service 03</span>
+              <div class="bento-icon-svg">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="11" width="18" height="10" rx="2"/>
+                  <circle cx="12" cy="5" r="2"/>
+                  <path d="M12 7v4"/>
+                  <line x1="8" y1="16" x2="8" y2="16"/>
+                  <line x1="16" y1="16" x2="16" y2="16"/>
+                </svg>
+              </div>
             </div>
-            <h3 class="service-title">AI Chat Widget / Digital Receptionist</h3>
-            <p class="service-desc">
+            <h3 class="bento-card-title">AI Chat Widget / Digital Receptionist</h3>
+            <p class="bento-card-desc">
               An intelligent, polite chat assistant embedded on your website that answers basic FAQs (service areas, hours, job types), collects the homeowner's contact information, and routes qualified inquiries straight to your phone.
             </p>
-            <div class="service-problem-box">
-              <span class="problem-label">The Problem It Solves:</span>
-              <span class="problem-text">Prospects browse your site late at night or on weekends when you're off the clock. Without an immediate response, they bounce and keep searching.</span>
+            <div class="bento-problem-block">
+              <span class="bento-problem-label">The Problem It Solves</span>
+              <p class="bento-problem-text">
+                Prospects browse your site late at night or on weekends when you're off the clock. Without an immediate response, they bounce and keep searching.
+              </p>
             </div>
-            <div class="service-tools">
-              <span class="tool-tag">AI Chatbots</span>
-              <span class="tool-tag">n8n Webhooks</span>
-              <span class="tool-tag">CRM Integration</span>
+            <div class="bento-tools-row">
+              <span class="tool-outline-pill">AI Chatbots</span>
+              <span class="tool-outline-pill">n8n Webhooks</span>
+              <span class="tool-outline-pill">CRM Integration</span>
             </div>
           </div>
 
-          <!-- Service Card 4: Online Presence & CRM Setup -->
-          <div class="service-card reveal delay-1">
-            <div class="service-card-top">
-              <span class="service-num">Service 04</span>
-              <div class="service-icon-box">🌐</div>
+          <!-- Bento Card 4: Larger Card (Online Presence Setup & CRM) -->
+          <div class="bento-card bento-card-small-2 fade-up">
+            <div class="bento-card-top">
+              <span class="bento-number">Service 04</span>
+              <div class="bento-icon-svg">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
             </div>
-            <h3 class="service-title">Online Presence Setup &amp; CRM</h3>
-            <p class="service-desc">
+            <h3 class="bento-card-title">Online Presence Setup &amp; CRM</h3>
+            <p class="bento-card-desc">
               Complete setup of your Google Business Profile, local SEO fundamentals, clean single-page contractor website, and a streamlined GoHighLevel CRM pipeline so all your inquiries are organized in one clean dashboard.
             </p>
-            <div class="service-problem-box">
-              <span class="problem-label">The Problem It Solves:</span>
-              <span class="problem-text">Starting out with no digital footprint, lost leads scribbled on receipts, and no single source of truth for upcoming jobs and estimates.</span>
+            <div class="bento-problem-block">
+              <span class="bento-problem-label">The Problem It Solves</span>
+              <p class="bento-problem-text">
+                Starting out with no digital footprint, lost leads scribbled on receipts, and no single source of truth for upcoming jobs and estimates.
+              </p>
             </div>
-            <div class="service-tools">
-              <span class="tool-tag">GHL CRM</span>
-              <span class="tool-tag">Airtable / Google Sheets</span>
-              <span class="tool-tag">Web Design</span>
+            <div class="bento-tools-row">
+              <span class="tool-outline-pill">GHL CRM</span>
+              <span class="tool-outline-pill">Airtable / Google Sheets</span>
+              <span class="tool-outline-pill">Web Design</span>
             </div>
           </div>
 
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ====================================================================
-           4. HOW I WORK (5-STEP SYSTEM ROADMAP)
-           ==================================================================== -->
-      <section id="how-i-work" class="reveal">
-        <div class="section-label">
-          <span class="dot"></span>
-          <span>How I See Business</span>
-        </div>
+    <!-- ====================================================================
+         4. HOW I WORK (5-PART HORIZONTAL CONNECTED TIMELINE)
+         ==================================================================== -->
+    <section id="how-i-work">
+      <div class="container">
         
-        <h2 class="section-heading">
-          A business is not a guessing game. It is a <span class="accent-amber">5-part system</span>.
-        </h2>
+        <div class="how-intro-wrapper fade-up">
+          <div class="section-eyebrow">
+            <span class="mono-tag">How I See Business</span>
+          </div>
+          <h2 class="section-h2">
+            A business is not a guessing game. It is a <span class="serif-accent">5-part system</span>.
+          </h2>
+          <p class="section-subtitle">
+            Most business owners struggle because they only look at marketing as random ads. I look at your operation as a continuous pipeline from the moment someone hears your name to the day they refer their neighbor.
+          </p>
 
-        <p class="section-lede">
-          Most business owners struggle because they only look at marketing as random ads. I look at your operation as a continuous pipeline from the moment someone hears your name to the day they refer their neighbor.
-        </p>
-
-        <!-- System Core Philosophy Intro -->
-        <div class="system-intro">
-          <div class="system-intro-icon">⚙️</div>
-          <div class="system-intro-text">
-            <strong>The Flywheel Model:</strong> When each stage connects cleanly to the next, your business stops feeling like an unpredictable roller coaster. You spend less time chasing leads and more time completing profitable work.
+          <!-- Flywheel Model Banner -->
+          <div class="flywheel-philosophy-banner">
+            <div class="banner-line-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </div>
+            <p>
+              <strong>The Flywheel Model:</strong> When each stage connects cleanly to the next, your business stops feeling like an unpredictable roller coaster. You spend less time chasing leads and more time completing profitable work.
+            </p>
           </div>
         </div>
 
-        <!-- 5-Step System Graphic / Cards -->
-        <div class="system-steps-flow">
+        <!-- 5-Part Connected Horizontal Track -->
+        <div class="connected-track-container fade-up">
           
-          <div class="step-card">
-            <div class="step-header">
-              <span class="step-num-circle">1</span>
-              <span class="step-icon">🧲</span>
-            </div>
-            <h3 class="step-name">Attract</h3>
-            <p class="step-desc">
+          <div class="track-step-node">
+            <div class="node-marker-wrap">1</div>
+            <h3 class="step-node-title">Attract</h3>
+            <p class="step-node-desc">
               Get found by the right local customers through optimized Google Business profiles, clear service pages, and targeted local visibility.
             </p>
           </div>
 
-          <div class="step-card">
-            <div class="step-header">
-              <span class="step-num-circle">2</span>
-              <span class="step-icon">📥</span>
-            </div>
-            <h3 class="step-name">Capture</h3>
-            <p class="step-desc">
+          <div class="track-step-node">
+            <div class="node-marker-wrap">2</div>
+            <h3 class="step-node-title">Capture</h3>
+            <p class="step-node-desc">
               Instant missed-call text-back and web chat widgets ensure that every inbound prospect gets an immediate response before they leave.
             </p>
           </div>
 
-          <div class="step-card">
-            <div class="step-header">
-              <span class="step-num-circle">3</span>
-              <span class="step-icon">💬</span>
-            </div>
-            <h3 class="step-name">Nurture</h3>
-            <p class="step-desc">
+          <div class="track-step-node">
+            <div class="node-marker-wrap">3</div>
+            <h3 class="step-node-title">Nurture</h3>
+            <p class="step-node-desc">
               Automated appointment reminders, SMS confirmations, and friendly follow-ups that build trust and dramatically reduce no-shows.
             </p>
           </div>
 
-          <div class="step-card">
-            <div class="step-header">
-              <span class="step-num-circle">4</span>
-              <span class="step-icon">🤝</span>
-            </div>
-            <h3 class="step-name">Convert</h3>
-            <p class="step-desc">
+          <div class="track-step-node">
+            <div class="node-marker-wrap">4</div>
+            <h3 class="step-node-title">Convert</h3>
+            <p class="step-node-desc">
               Organized quote delivery and CRM pipeline tracking so you know exactly which estimates are pending, accepted, or due for follow-up.
             </p>
           </div>
 
-          <div class="step-card">
-            <div class="step-header">
-              <span class="step-num-circle">5</span>
-              <span class="step-icon">⭐</span>
-            </div>
-            <h3 class="step-name">Retain</h3>
-            <p class="step-desc">
+          <div class="track-step-node">
+            <div class="node-marker-wrap">5</div>
+            <h3 class="step-node-title">Retain</h3>
+            <p class="step-node-desc">
               Automated review requests sent right after job completion, plus seasonal reactivation campaigns to win repeat business year after year.
             </p>
           </div>
 
         </div>
-      </section>
 
-      <!-- ====================================================================
-           5. EXPERIENCE TIMELINE
-           ==================================================================== -->
-      <section id="experience" class="reveal">
-        <div class="section-label">
-          <span class="dot"></span>
-          <span>Career Journey</span>
-        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. EXPERIENCE SECTION (CLEAN EDITORIAL TIMELINE)
+         ==================================================================== -->
+    <section id="experience">
+      <div class="container">
         
-        <h2 class="section-heading">
-          10+ years of <span class="accent-forest">real-world accountability</span>.
-        </h2>
-
-        <p class="section-lede">
-          Here is the path that taught me to remain calm under pressure, understand diverse client personalities, and build systems with zero room for sloppy errors.
-        </p>
-
-        <div class="timeline">
+        <div class="experience-layout">
           
-          <!-- Timeline Item 1: JP Morgan Chase -->
-          <div class="timeline-item active">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <h3 class="timeline-company">JP Morgan Chase</h3>
-                <span class="timeline-dates">Feb 2024 — Present</span>
+          <div class="experience-left fade-up">
+            <div class="section-eyebrow">
+              <span class="mono-tag">Career Journey</span>
+            </div>
+            <h2 class="section-h2">
+              10+ years of <span class="serif-accent">real-world accountability</span>.
+            </h2>
+            <p class="section-subtitle">
+              Here is the path that taught me to remain calm under pressure, understand diverse client personalities, and build systems with zero room for sloppy errors.
+            </p>
+          </div>
+
+          <div class="experience-list fade-up">
+            
+            <!-- Timeline Entry 1 -->
+            <div class="exp-entry">
+              <div class="exp-entry-header">
+                <h3 class="exp-company-name">JP Morgan Chase</h3>
+                <span class="exp-date-mono">Feb 2024 — Present</span>
               </div>
-              <div class="timeline-role">Fraud Specialist &amp; Subject Matter Expert (SME)</div>
-              <p class="timeline-desc">
+              <div class="exp-role-title">Fraud Specialist &amp; Subject Matter Expert (SME)</div>
+              <p class="exp-desc-p">
                 Investigating and resolving complex fraud and non-fraud dispute claims across credit cards, ACH transfers, domestic and international wire transfers, Zelle, and digital wallets.
               </p>
-              <div class="timeline-lessons">
+              <div class="exp-forged-note">
                 <strong>What it forged:</strong> Meticulous attention to detail, strict adherence to compliance workflows, and deep security-first process thinking.
               </div>
             </div>
-          </div>
 
-          <!-- Timeline Item 2: Accenture -->
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <h3 class="timeline-company">Accenture</h3>
-                <span class="timeline-dates">June 2017 — Jan 2024 (6+ Years)</span>
+            <!-- Timeline Entry 2 -->
+            <div class="exp-entry">
+              <div class="exp-entry-header">
+                <h3 class="exp-company-name">Accenture</h3>
+                <span class="exp-date-mono">June 2017 — Jan 2024 (6+ Years)</span>
               </div>
-              <div class="timeline-role">Customer Service Agent &#8594; SME &#8594; Team Leader (UK Telecom Account)</div>
-              <p class="timeline-desc">
+              <div class="exp-role-title">Customer Service Agent &#8594; SME &#8594; Team Leader (UK Telecom Account)</div>
+              <p class="exp-desc-p">
                 Started on the frontline resolving billing, orders, product upgrades, and new client acquisition. Promoted to Subject Matter Expert and Team Leader, mentoring team members, managing escalations, and consistently driving daily, monthly, and annual sales goals.
               </p>
-              <div class="timeline-lessons">
+              <div class="exp-forged-note">
                 <strong>What it forged:</strong> People management, emotional intelligence, adapting to different communication styles, and coaching teams to hit quantitative targets under tight deadlines.
               </div>
             </div>
-          </div>
 
-          <!-- Timeline Item 3: Sales Representative -->
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <h3 class="timeline-company">Sales Representative</h3>
-                <span class="timeline-dates">2015 — 2017</span>
+            <!-- Timeline Entry 3 -->
+            <div class="exp-entry">
+              <div class="exp-entry-header">
+                <h3 class="exp-company-name">Sales Representative</h3>
+                <span class="exp-date-mono">2015 — 2017</span>
               </div>
-              <div class="timeline-role">Inbound &amp; Outbound Sales Specialist</div>
-              <p class="timeline-desc">
+              <div class="exp-role-title">Inbound &amp; Outbound Sales Specialist</div>
+              <p class="exp-desc-p">
                 Conducted high-volume inbound and outbound sales for online talent portfolios. Qualified incoming leads, conducted live sales demonstrations, handled customer objections, and closed contracts.
               </p>
-              <div class="timeline-lessons">
+              <div class="exp-forged-note">
                 <strong>What it forged:</strong> Understanding buyer psychology, overcoming objections with empathy, and learning that follow-up speed is everything.
               </div>
             </div>
+
           </div>
 
         </div>
-      </section>
 
-      <!-- ====================================================================
-           6. CASE STUDIES & PROJECTS (PLACEHOLDER SECTION)
-           ==================================================================== -->
-      <!-- REPLACE PLACEHOLDER NOTICE & TEMPLATES WHEN REAL CASE STUDIES ARE READY -->
-      <section id="projects" class="reveal">
-        <div class="section-label">
-          <span class="dot"></span>
-          <span>Verified Work</span>
-        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. PROJECTS & CASE STUDIES (WIDE EDITORIAL PANELS)
+         ==================================================================== -->
+    <section id="projects">
+      <div class="container">
         
-        <h2 class="section-heading">
-          Projects &amp; Case Studies <span class="accent-amber">[ In Progress ]</span>
-        </h2>
+        <div class="projects-header-wrapper fade-up">
+          <div class="section-eyebrow">
+            <span class="mono-tag">Verified Work</span>
+          </div>
+          <h2 class="section-h2">
+            Projects &amp; Case Studies <span class="serif-accent">[ In Progress ]</span>
+          </h2>
+          <p class="section-subtitle">
+            I refuse to fabricate numbers or invent fictional clients. Below is the exact framework I use for client projects, with live case studies currently being documented for publication.
+          </p>
 
-        <p class="section-lede">
-          I refuse to fabricate numbers or invent fictional clients. Below is the exact framework I use for client projects, with live case studies currently being documented for publication.
-        </p>
-
-        <!-- Placeholder Notice Banner -->
-        <div class="placeholder-notice-box">
-          <div class="notice-icon">📋</div>
-          <div class="notice-text">
-            <strong>Transparency Notice:</strong> Client automation setups and CRM rollouts are actively underway. Full case study breakdowns with documented metrics (response times, recovered leads, and customer reviews) will be published here upon client sign-off.
+          <!-- Slim Transparency Banner -->
+          <div class="transparency-banner-slim">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <p>
+              <strong>Transparency Notice:</strong> Client automation setups and CRM rollouts are actively underway. Full case study breakdowns with documented metrics (response times, recovered leads, and customer reviews) will be published here upon client sign-off.
+            </p>
           </div>
         </div>
 
-        <!-- Case Study Template Cards -->
-        <div class="case-studies-grid">
+        <div class="case-study-panels-list">
           
-          <!-- Template Card 1 -->
-          <!-- EDIT THIS BLOCK WHEN FIRST CASE STUDY IS READY -->
-          <div class="case-study-template-card">
-            <span class="template-badge">Template / Case Study 01</span>
-            <h3 class="template-title">Local Landscaping Contractor Setup</h3>
-            
-            <div class="template-section-item">
-              <span class="template-section-label">The Problem</span>
-              <div class="template-section-content">
-                Losing an estimated 35-40% of daytime phone calls while crew is out mowing and building retaining walls. No automated follow-up system in place.
-              </div>
+          <!-- Case Study Panel 1 -->
+          <div class="case-study-wide-panel fade-up">
+            <div class="panel-top-row">
+              <h3 class="panel-case-title">Local Landscaping Contractor Setup</h3>
+              <span class="mono-tag">Template / Case Study 01</span>
             </div>
-
-            <div class="template-section-item">
-              <span class="template-section-label">What I Built</span>
-              <div class="template-section-content">
-                GoHighLevel missed-call text-back system, 24/7 web quote request form, and automated review request workflow triggered after invoice settlement.
+            <div class="panel-three-col-grid">
+              
+              <div class="panel-col-block">
+                <span class="col-header-label">The Problem</span>
+                <p class="col-body-text">
+                  Losing an estimated 35-40% of daytime phone calls while crew is out mowing and building retaining walls. No automated follow-up system in place.
+                </p>
               </div>
-            </div>
 
-            <div class="template-section-item">
-              <span class="template-section-label">The Result</span>
-              <div class="template-section-content">
-                <em>[ Case study data currently in 60-day testing window. Verified metrics will appear here. ]</em>
+              <div class="panel-col-block">
+                <span class="col-header-label">What I Built</span>
+                <p class="col-body-text">
+                  GoHighLevel missed-call text-back system, 24/7 web quote request form, and automated review request workflow triggered after invoice settlement.
+                </p>
               </div>
+
+              <div class="panel-col-block">
+                <span class="col-header-label">The Result</span>
+                <div class="metrics-pending-slot">
+                  [ Case study data currently in 60-day testing window. Verified metrics will appear here. ]
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <!-- Template Card 2 -->
-          <!-- EDIT THIS BLOCK WHEN SECOND CASE STUDY IS READY -->
-          <div class="case-study-template-card">
-            <span class="template-badge">Template / Case Study 02</span>
-            <h3 class="template-title">Residential Trade Startup Foundation</h3>
-            
-            <div class="template-section-item">
-              <span class="template-section-label">The Problem</span>
-              <div class="template-section-content">
-                Newly licensed trade business with zero online presence, no Google Business Profile verification, and manual pen-and-paper job tracking.
-              </div>
+          <!-- Case Study Panel 2 -->
+          <div class="case-study-wide-panel fade-up">
+            <div class="panel-top-row">
+              <h3 class="panel-case-title">Residential Trade Startup Foundation</h3>
+              <span class="mono-tag">Template / Case Study 02</span>
             </div>
-
-            <div class="template-section-item">
-              <span class="template-section-label">What I Built</span>
-              <div class="template-section-content">
-                Full Google Business Profile optimization, fast mobile landing page, unified CRM inbox, and automated past client database reactivation campaign.
+            <div class="panel-three-col-grid">
+              
+              <div class="panel-col-block">
+                <span class="col-header-label">The Problem</span>
+                <p class="col-body-text">
+                  Newly licensed trade business with zero online presence, no Google Business Profile verification, and manual pen-and-paper job tracking.
+                </p>
               </div>
-            </div>
 
-            <div class="template-section-item">
-              <span class="template-section-label">The Result</span>
-              <div class="template-section-content">
-                <em>[ Case study data currently in progress. Verified metrics will appear here. ]</em>
+              <div class="panel-col-block">
+                <span class="col-header-label">What I Built</span>
+                <p class="col-body-text">
+                  Full Google Business Profile optimization, fast mobile landing page, unified CRM inbox, and automated past client database reactivation campaign.
+                </p>
               </div>
+
+              <div class="panel-col-block">
+                <span class="col-header-label">The Result</span>
+                <div class="metrics-pending-slot">
+                  [ Case study data currently in progress. Verified metrics will appear here. ]
+                </div>
+              </div>
+
             </div>
           </div>
 
         </div>
-      </section>
 
-      <!-- ====================================================================
-           7. TESTIMONIALS (PLACEHOLDER SECTION)
-           ==================================================================== -->
-      <!-- REPLACE PLACEHOLDERS BELOW AS GENUINE CLIENT REVIEWS ARE COLLECTED -->
-      <section id="testimonials" class="reveal">
-        <div class="section-label">
-          <span class="dot"></span>
-          <span>Client Feedback</span>
-        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. TESTIMONIALS (SLIM RESERVED ELEGANT BLOCK)
+         ==================================================================== -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
         
-        <h2 class="section-heading">
-          Client Testimonials <span class="accent-forest">[ Reserved Space ]</span>
-        </h2>
+        <div class="testimonials-minimal-block fade-up">
+          <div class="testimonials-min-left">
+            <div class="section-eyebrow">
+              <span class="mono-tag">Client Feedback</span>
+            </div>
+            <h2>Client Testimonials <span class="serif-accent">[ Reserved ]</span></h2>
+            <p>
+              Integrity is non-negotiable. I will never write fake reviews. As real trade clients complete their onboarding and experience measurable results, their direct words will be shared here.
+            </p>
+          </div>
 
-        <p class="section-lede">
-          Integrity is non-negotiable. I will never write fake reviews. As real trade clients complete their onboarding and experience measurable results, their direct words will be shared here.
-        </p>
-
-        <!-- Placeholder Notice -->
-        <div class="placeholder-notice-box">
-          <div class="notice-icon">💬</div>
-          <div class="notice-text">
-            <strong>Reserved for Real Feedback:</strong> Genuine reviews from contractors and small business owners will be populated here as current client engagements conclude.
+          <div class="testimonials-min-right">
+            <div class="testimonial-slim-item">
+              <span class="test-slim-quote">&ldquo;[ Placeholder: Real feedback on response speed, missed call text back, or CRM setups will be published here. ]&rdquo;</span>
+              <span class="test-slim-tag">[ Slot 01 Reserved ]</span>
+            </div>
+            <div class="testimonial-slim-item">
+              <span class="test-slim-quote">&ldquo;[ Placeholder: Contractor feedback on saved hours, automated follow-ups, and customer acquisition. ]&rdquo;</span>
+              <span class="test-slim-tag">[ Slot 02 Reserved ]</span>
+            </div>
+            <div class="testimonial-slim-item">
+              <span class="test-slim-quote">&ldquo;[ Placeholder: Trade business founder feedback on 5-star Google review generation. ]&rdquo;</span>
+              <span class="test-slim-tag">[ Slot 03 Reserved ]</span>
+            </div>
           </div>
         </div>
 
-        <!-- 3 Placeholder Cards Ready to Fill In -->
-        <div class="testimonials-grid">
-          
-          <!-- Testimonial Placeholder 1 -->
-          <!-- EDIT CONTENT BELOW FOR CLIENT 1 -->
-          <div class="testimonial-placeholder-card">
-            <div class="placeholder-avatar">01</div>
-            <div class="placeholder-quote-box">
-              &ldquo;[ Placeholder: Client review text regarding response speed, missed call text back, or CRM implementation will be inserted here. ]&rdquo;
-            </div>
-            <div class="placeholder-client-info">
-              <strong>[ Contractor Name ]</strong><br>
-              <span>[ Business / Trade Type, Location ]</span>
-            </div>
-          </div>
+      </div>
+    </section>
 
-          <!-- Testimonial Placeholder 2 -->
-          <!-- EDIT CONTENT BELOW FOR CLIENT 2 -->
-          <div class="testimonial-placeholder-card">
-            <div class="placeholder-avatar">02</div>
-            <div class="placeholder-quote-box">
-              &ldquo;[ Placeholder: Client review text regarding saved hours, automated follow-ups, and ease of communication will be inserted here. ]&rdquo;
-            </div>
-            <div class="placeholder-client-info">
-              <strong>[ Business Owner Name ]</strong><br>
-              <span>[ Landscaping / Service Specialty ]</span>
-            </div>
-          </div>
-
-          <!-- Testimonial Placeholder 3 -->
-          <!-- EDIT CONTENT BELOW FOR CLIENT 3 -->
-          <div class="testimonial-placeholder-card">
-            <div class="placeholder-avatar">03</div>
-            <div class="placeholder-quote-box">
-              &ldquo;[ Placeholder: Client review text regarding Google reviews increase, database reactivation, or pipeline organization will be inserted here. ]&rdquo;
-            </div>
-            <div class="placeholder-client-info">
-              <strong>[ Trade Founder Name ]</strong><br>
-              <span>[ Residential Services, Location ]</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           8. CONTACT SECTION
-           ==================================================================== -->
-      <section id="contact" class="reveal">
-        <div class="section-label">
-          <span class="dot"></span>
-          <span>Let's Connect</span>
-        </div>
+    <!-- ====================================================================
+         8. CONTACT SECTION
+         ==================================================================== -->
+    <section id="contact">
+      <div class="container">
         
-        <h2 class="section-heading">
-          Ready to stop losing leads? <span class="accent-amber">Let's talk straight</span>.
-        </h2>
-
-        <p class="section-lede">
-          No pushy sales reps, no high-pressure pitches. Tell me a little about your business, and I'll give you honest feedback on what systems make the most sense for you right now.
-        </p>
-
-        <div class="contact-grid">
+        <div class="contact-two-col">
           
-          <!-- Direct Channels Left Column -->
-          <div class="contact-info-column">
-            
-            <a href="mailto:cegiebad@outlook.com" class="direct-channel-card" title="Send Cegie an email">
-              <div class="channel-icon">✉️</div>
-              <div class="channel-details">
-                <span class="channel-label">Email Me Directly</span>
-                <span class="channel-value">cegiebad@outlook.com</span>
-              </div>
-            </a>
-
-            <a href="tel:09194225298" class="direct-channel-card" title="Call or text Cegie">
-              <div class="channel-icon">📱</div>
-              <div class="channel-details">
-                <span class="channel-label">Call / Text (Philippines)</span>
-                <span class="channel-value">0919 422 5298</span>
-              </div>
-            </a>
-
-            <div class="direct-channel-card" style="cursor: default;">
-              <div class="channel-icon">📍</div>
-              <div class="channel-details">
-                <span class="channel-label">Base Location</span>
-                <span class="channel-value">Cebu, Philippines (GMT+8)</span>
-              </div>
+          <!-- Contact Left Column -->
+          <div class="contact-left-col fade-up">
+            <div class="section-eyebrow">
+              <span class="mono-tag">Let's Connect</span>
             </div>
+            <h2 class="section-h2">
+              Ready to stop losing leads? <span class="serif-accent">Let's talk straight</span>.
+            </h2>
+            <p class="contact-intro-p">
+              No pushy sales reps, no high-pressure pitches. Tell me a little about your business, and I'll give you honest feedback on what systems make the most sense for you right now.
+            </p>
 
-            <div class="honesty-callout" style="margin-top: 0.5rem;">
-              <p style="font-size: 0.88rem;">
-                <strong>Prompt Response Guarantee:</strong> I read every inquiry myself. You will typically hear back from me within 12 to 24 hours.
-              </p>
+            <div class="contact-channels-list">
+              
+              <a href="mailto:cegiebad@outlook.com" class="channel-row-link" title="Send Cegie an email">
+                <div class="channel-svg-box">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div class="channel-text-info">
+                  <span class="channel-meta-label">Email Directly</span>
+                  <span class="channel-main-val">cegiebad@outlook.com</span>
+                </div>
+              </a>
+
+              <a href="tel:09194225298" class="channel-row-link" title="Call or text Cegie">
+                <div class="channel-svg-box">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="channel-text-info">
+                  <span class="channel-meta-label">Call / Text (Philippines)</span>
+                  <span class="channel-main-val">0919 422 5298</span>
+                </div>
+              </a>
+
+              <div class="channel-row-link" style="cursor: default;">
+                <div class="channel-svg-box">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="channel-text-info">
+                  <span class="channel-meta-label">Base Location</span>
+                  <span class="channel-main-val">Cebu, Philippines (GMT+8)</span>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <!-- Working Contact Form Right Column -->
-          <div class="contact-form-card">
+          <!-- Contact Form Right Column -->
+          <div class="contact-form-surface fade-up">
             <form id="contactForm" novalidate>
               
               <div class="form-group">
@@ -755,12 +838,14 @@
               <div class="form-group">
                 <label for="userMessage" class="form-label">How can I help you? *</label>
                 <textarea id="userMessage" name="message" class="form-textarea" placeholder="Tell me about your current setup, missed calls, or what you'd like to automate..." required></textarea>
-                <span class="form-help">Please mention if you currently use GoHighLevel, a website, or just your personal phone.</span>
+                <span class="form-help-subtext">Please mention if you currently use GoHighLevel, a website, or just your personal phone.</span>
               </div>
 
-              <button type="submit" class="btn-submit" id="submitBtn">
+              <button type="submit" class="btn btn-form-submit" id="submitBtn">
                 <span>Send Message</span>
-                <span>&#8594;</span>
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8h10M9 4l4 4-4 4"/>
+                </svg>
               </button>
 
               <!-- Form Response Alert Message -->
@@ -769,51 +854,33 @@
           </div>
 
         </div>
-      </section>
-    </main>
 
-    <!-- ====================================================================
-         9. FOOTER
-         ==================================================================== -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div>
-          <div class="footer-brand">Cegie Badayos</div>
-          <p style="font-size: 0.88rem; margin-top: 0.35rem;">
-            Digital Marketer &amp; AI Automation Freelancer
-          </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       9. MINIMAL FOOTER
+       ==================================================================== -->
+  <footer class="footer-minimal">
+    <div class="container">
+      <div class="footer-single-row">
+        <div class="footer-brand-mono">
+          &copy; 2026 Cegie Badayos · Philippines
         </div>
 
-        <!-- Social Link Placeholders -->
-        <!-- REPLACE '#' WITH YOUR ACTUAL SOCIAL URLS WHEN READY -->
-        <div class="footer-social-links">
-          <a href="#" class="social-link" title="LinkedIn Profile Placeholder" target="_blank" rel="noopener noreferrer">
-            <!-- REPLACE: LinkedIn URL -->
-            <span>LinkedIn</span>
-          </a>
-          <span style="color: var(--border);">·</span>
-          <a href="#" class="social-link" title="GitHub Profile Placeholder" target="_blank" rel="noopener noreferrer">
-            <!-- REPLACE: GitHub URL -->
-            <span>GitHub</span>
-          </a>
-          <span style="color: var(--border);">·</span>
-          <a href="mailto:cegiebad@outlook.com" class="social-link" title="Email Cegie Badayos">
-            <span>Email</span>
-          </a>
+        <div class="footer-social-text-links">
+          <a href="#" class="footer-text-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="#" class="footer-text-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:cegiebad@outlook.com" class="footer-text-link">Email</a>
+        </div>
+
+        <div>
+          <a href="#hero" class="footer-back-to-top">Back to top &#8593;</a>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <div>
-          &copy; 2026 Cegie Badayos. All rights reserved. Philippines.
-        </div>
-        <div>
-          <a href="#hero" class="back-to-top">Back to top &#8593;</a>
-        </div>
-      </div>
-    </footer>
-
-  </div>
+    </div>
+  </footer>
 
   <!-- Main JavaScript File -->
   <script src="app.js"></script>

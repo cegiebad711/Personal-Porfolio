@@ -1,49 +1,17 @@
 /**
  * CEGIE BADAYOS — PERSONAL PORTFOLIO JAVASCRIPT
  * Features:
- *  - Theme Toggle (Light / Dark mode with localStorage persistence)
- *  - Sticky Navbar & Dynamic Scroll Progress Bar
- *  - Mobile Navigation Drawer Toggle
- *  - Scroll-Reveal via IntersectionObserver
- *  - Active Section Nav Highlighter
- *  - Ambient Mouse-Tracking Glow
- *  - Contact Form Client Validation & Submission Feedback
+ *  - Minimal Sticky Navbar & Dynamic Scroll Progress Bar
+ *  - Clean Mobile Navigation Drawer
+ *  - Staggered Scroll-Reveal Animations (IntersectionObserver)
+ *  - Active Section Navigation Highlighter
+ *  - Live HubSpot Forms API CRM Integration (Portal 247641741 / Form d3cabcd1-f0c9-4881-b2ad-5464b15d2167)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // --------------------------------------------------------------------------
-  // 1. LIGHT / DARK THEME TOGGLE
-  // --------------------------------------------------------------------------
-  const themeToggle = document.getElementById('themeToggle');
-  const themeIcon = document.getElementById('themeIcon');
-  const root = document.documentElement;
-
-  // Check saved theme or system preference
-  const savedTheme = localStorage.getItem('cegie-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
-
-  applyTheme(initialTheme);
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = root.getAttribute('data-theme') || 'dark';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('cegie-theme', newTheme);
-    });
-  }
-
-  function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    if (themeIcon) {
-      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-    }
-  }
-
-  // --------------------------------------------------------------------------
-  // 2. STICKY NAVBAR & SCROLL PROGRESS BAR
+  // 1. STICKY NAVBAR & DYNAMIC SCROLL PROGRESS BAR
   // --------------------------------------------------------------------------
   const navbar = document.getElementById('navbar');
   const scrollProgress = document.getElementById('scrollProgress');
@@ -51,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
-    // Sticky shrink class
+    // Add .scrolled class for subtle blur & hairline border
     if (navbar) {
       if (scrollY > 30) {
         navbar.classList.add('scrolled');
@@ -60,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Scroll progress bar width
+    // Update top progress bar width
     if (scrollProgress) {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       if (docHeight > 0) {
@@ -71,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   // --------------------------------------------------------------------------
-  // 3. MOBILE MENU TOGGLE
+  // 2. MOBILE MENU SLIDE-IN DRAWER
   // --------------------------------------------------------------------------
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
@@ -81,14 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = navLinks.classList.toggle('open');
       menuToggle.classList.toggle('open', isOpen);
       menuToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close mobile menu when clicking a link
+    // Close mobile menu when a nav link is clicked
     navLinks.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
         menuToggle.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       });
     });
 
@@ -98,12 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.remove('open');
         menuToggle.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       }
     });
   }
 
   // --------------------------------------------------------------------------
-  // 4. ACTIVE SECTION NAVIGATION HIGHLIGHTER
+  // 3. ACTIVE SECTION NAVIGATION HIGHLIGHTER
   // --------------------------------------------------------------------------
   const sections = document.querySelectorAll('section[id], header[id]');
   const allNavLinks = document.querySelectorAll('.nav-links .nav-link');
@@ -123,15 +94,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    rootMargin: '-30% 0px -60% 0px'
+    rootMargin: '-25% 0px -65% 0px'
   });
 
   sections.forEach(section => navObserver.observe(section));
 
   // --------------------------------------------------------------------------
-  // 5. SCROLL REVEAL ANIMATIONS
+  // 4. SUBTLE SCROLL-REVEAL ANIMATIONS (INTERSECTION OBSERVER)
   // --------------------------------------------------------------------------
-  const revealElements = document.querySelectorAll('.reveal');
+  const fadeUpElements = document.querySelectorAll('.fade-up');
+
+  // Stagger sibling elements inside grids
+  fadeUpElements.forEach((el, index) => {
+    const parentGrid = el.closest('.bento-services-grid, .hero-trust-row, .case-study-panels-list, .connected-track-container');
+    if (parentGrid) {
+      const siblings = Array.from(parentGrid.querySelectorAll('.fade-up'));
+      const siblingIndex = siblings.indexOf(el);
+      if (siblingIndex > 0) {
+        el.style.transitionDelay = `${siblingIndex * 0.08}s`;
+      }
+    }
+  });
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -141,31 +124,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    threshold: 0.12,
+    threshold: 0.1,
     rootMargin: '0px 0px -40px 0px'
   });
 
-  revealElements.forEach(el => revealObserver.observe(el));
+  fadeUpElements.forEach(el => revealObserver.observe(el));
 
   // --------------------------------------------------------------------------
-  // 6. MOUSE-TRACKING AMBIENT GLOW EFFECT
+  // 5. HUBSPOT CRM LIVE INTEGRATION & CONTACT FORM
   // --------------------------------------------------------------------------
-  window.addEventListener('mousemove', (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
-    root.style.setProperty('--mouse-x', `${x}px`);
-    root.style.setProperty('--mouse-y', `${y}px`);
-  }, { passive: true });
+  const HUBSPOT_CONFIG = {
+    portalId: '247641741',
+    formGuid: 'd3cabcd1-f0c9-4881-b2ad-5464b15d2167',
+    region: 'na2'
+  };
 
-  // --------------------------------------------------------------------------
-  // 7. CONTACT FORM CLIENT-SIDE VALIDATION & HANDLING
-  // --------------------------------------------------------------------------
   const contactForm = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
   const formStatus = document.getElementById('formStatus');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const nameInput = document.getElementById('userName');
@@ -178,11 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const business = businessInput.value;
       const message = messageInput.value.trim();
 
-      // Reset status display
+      // Reset alert status
       formStatus.className = 'form-status-alert';
       formStatus.style.display = 'none';
 
-      // Basic client validation
+      // Validation
       if (!name) {
         showStatus('Please enter your name.', 'error');
         nameInput.focus();
@@ -208,24 +187,63 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // UI Sending state
-      const originalBtnText = submitBtn.innerHTML;
+      // Button sending state
+      const originalBtnHTML = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Sending inquiry...</span>`;
+      submitBtn.innerHTML = `<span>Connecting to HubSpot...</span>`;
 
-      // Simulated clean submission flow
-      setTimeout(() => {
+      // Live HubSpot Submissions API v3
+      const regionalEndpoint = `https://api-na2.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_CONFIG.portalId}/${HUBSPOT_CONFIG.formGuid}`;
+      const globalEndpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_CONFIG.portalId}/${HUBSPOT_CONFIG.formGuid}`;
+
+      const payload = {
+        fields: [
+          { name: 'firstname', value: name },
+          { name: 'email', value: email },
+          { name: 'company', value: business },
+          { name: 'message', value: `[Business/Trade: ${business}]\n\n${message}` }
+        ],
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title
+        }
+      };
+
+      try {
+        // Attempt 1: Regional NA2 endpoint
+        let response = await fetch(regionalEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => null);
+
+        // Attempt 2: Global endpoint fallback if regional doesn't answer
+        if (!response || !response.ok) {
+          response = await fetch(globalEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        }
+
+        if (response && response.ok) {
+          showStatus(
+            `Thank you, ${name}! Your inquiry has been sent directly to my HubSpot CRM. I will review your business details and get back to you at ${email} within 24 hours.`,
+            'success'
+          );
+          contactForm.reset();
+        } else {
+          const errData = response ? await response.json().catch(() => ({})) : {};
+          console.error('HubSpot API Response Error:', errData);
+          showStatus('Your message could not be sent to HubSpot right now. Please email me directly at cegiebad@outlook.com or call 0919 422 5298.', 'error');
+        }
+      } catch (networkError) {
+        console.error('HubSpot Network Error:', networkError);
+        showStatus('Connection issue. Please email me directly at cegiebad@outlook.com.', 'error');
+      } finally {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-
-        showStatus(
-          `Thank you, ${name}! Your inquiry has been recorded. I will review your business details and get back to you at ${email} within 24 hours.`,
-          'success'
-        );
-
-        // Reset inputs
-        contactForm.reset();
-      }, 900);
+        submitBtn.innerHTML = originalBtnHTML;
+      }
     });
   }
 
